@@ -8,6 +8,8 @@ function tShirtChange(){
     console.log(newShirtValue);
     let tShirtText = document.getElementById("tShirt").innerHTML;
 
+
+
     tShirtText = newShirtValue;
     document.getElementById("tShirt").innerHTML = tShirtText;
    
@@ -15,49 +17,55 @@ function tShirtChange(){
 }
 
 function changeShirt(color){
-    let shirtColor = document.getElementById("shirtimg").src;
-    console.log(shirtColor);
 
     if (color === "grey"){
-        shirtColor = document.getElementById("greyshirt").src;
+      let shirtColor = document.getElementById("shirtimg");
+      let greySrc = document.getElementById("greyshirt");
 
-        console.log("shirt color is grey");
-       }
+      shirtColor.src = greySrc.src;
+    }
     else if (color === "blue"){
-        console.log("shirt color is blue");
-       }
+      let shirtColor = document.getElementById("shirtimg");
+      let blueSrc = document.getElementById("blueshirt");
+
+      shirtColor.src = blueSrc.src;
+    }
     else if (color === "white"){
-        console.log("shirt color is white");
-       }
+      let shirtColor = document.getElementById("shirtimg");
+      let whiteSrc = document.getElementById("whiteshirt");
+
+      shirtColor.src = whiteSrc.src;
+    }
     else{
-           console.log("no color selected")
-       }
+      console.log("no color selected")
+    }
+}
 
+function maxChar(tInput){
+if (tInput.value.length > tInput.maxLength) 
+tInput.value = tInput.value.slice(0, tInput.maxLength);
+}
+
+let changeFontStyle = function (font) {
+  document.getElementById("tShirt").style.fontFamily
+              = font.value;
 }
 
 
+// var slider = document.getElementById("myRange");
+// var output = document.getElementById("demo");
 
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
 
-// $('#ex1').slider({
-// 	formatter: function(value) {
-// 		return 'Current value: ' + value;
-// 	}
-// });
-
-// Without JQuery
-// var slider = new Slider('#ex1', {
-// 	formatter: function(value) {
-// 		return 'Current value: ' + value;
-// 	}
-// });
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-   
-slider.oninput = function() {
-    console.log(slider.value);
-  output.innerHTML = this.value;
+// Change Font Size
+function fontChange() {
+  console.log("function called");
+let range = document.getElementById('myRange');
+console.log(range.value);
+let content = document.getElementById('tShirt');
+// range.addEventListener('myRange', function(){
+const rangevalue = range.value;
+content.style.fontsize = rangevalue + "px";
+console.log(content);
+// })
 }

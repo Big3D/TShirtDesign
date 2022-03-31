@@ -17,11 +17,22 @@
     <script src="/js/script.js" defer></script>
 </head>
 <body>
+
+
+<!-- NavBar Begin -->
+<nav class="navbar navbar-dark bg-dark">
+
+  
+  <!-- Navbar content -->
+</nav>
+<!-- NavBar END -->
+
+
     <div class="Header jumbotron-fluid bg-primary rounded text-center p-5">
         <h1 style="font-family: Orbitron;">T-Shirt Shop</h1>
     </div>
 
-    <div class="container d-flex justify-content-between">
+    <div class="container d-flex justify-content-between" id="shirtsection">
         <div class="row">
             <div class="col-3 bg-white">
                 <div id="altImages" class="row">
@@ -49,7 +60,9 @@
                     <div>
                         <label for="tShirtInput">Text to put on T-Shirt:</label>
                         <br>
-                        <input id="tShirtInput" type="text" name = "tinput" style="width: 300px;" placeholder="Type text here">
+                        <input id="tShirtInput" type="text" name="tinput" style="width: 300px;" placeholder="Type text here" oninput="maxChar(this)" maxlength="20" >
+                        <!-- oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" -->
+                        
                         <input type="submit" value="Submit" onclick="tShirtChange();"/>
                     </div>
                     <div class="col">
@@ -57,28 +70,29 @@
                         <div>
                             <label for="exampleInputEmail1">Choose Font: </label>
                        
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select"  aria-label="Default select example" onchange="changeFontStyle(this)">
                             <option selected id="font" >Font Style</option>
-                            <option value="1" style="font-family: Luckiest+Guy;">Luckiest Guy</option>
-                            <option value="2" style="font-family: Rightous;">Rightous</option>
-                            <option value="3" style="font-family: Monoton;">Monoton</option>
-                            <option value="4" style="font-family: Playball;">Playball</option>
+                            <option value="Luckiest+Guy" style="font-family: Luckiest+Guy;">Luckiest Guy</option>
+                            <option value="Rightous" style="font-family: Rightous;">Rightous</option>
+                            <option value="Monoton" style="font-family: Monoton;">Monoton</option>
+                            <option value="Playball" style="font-family: Playball;">Playball</option>
                             </select>
                         </div>
                         <br>
-                        <!-- <form class="multi-range-field my-5 pb-5">
-                            <input id="multi6" class="multi-range" type="range" />
-                          </form> -->
+                        
                           
                         <div class="slidecontainer">
                             <p>Choose Font Size:</p>
-                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            <input type="range" min="12" max="30" value="16" class="slider" id="myRange" onchange="fontChange()">
                             <p>Value: <span id="demo"></span></p>
                           </div>
                           
                     </div>
                 <br>
-                <button type="submit" class="btn btn-primary" style="width: 175px;">Add To Cart</button>
+                <button
+
+
+                 type="submit" class="btn btn-primary" style="width: 175px;">Add To Cart</button>
                 <button type="submit" class="btn btn-danger" style="margin: 20px;">Remove From Cart</button>
                 </form>
             
@@ -92,8 +106,8 @@
 
     
 <!-- Shopping cart Info -->
-<div class="">
-<table class="pb-5 mb-5 text-center">
+<div class="container-fluid">
+<table class="pb-5 mb-5 text-center" id="cart" > 
   
     <tr>
       <th style="font-size: 24px;" class="">Shopping Cart</th>
@@ -115,6 +129,8 @@
       <td><b>$0.00</b></td>
     </tr>
   </table>
+</div>
+
 
 
   
@@ -122,7 +138,8 @@
 
 
 <!-- Footer -->
-      <div class="footer">
+
+                <div class="footer">
           <p>Footer align</p>
       </div>        
 <!-- Footer END -->
