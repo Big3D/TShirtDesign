@@ -20,21 +20,103 @@
 
 
 <!-- NavBar Begin -->
-<nav class="navbar navbar-dark bg-dark">
 
-  
-  <!-- Navbar content -->
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-primary p-4">
+    <h5 class="text-white h4">Collapsed content</h5>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand float-end" href="#">
+      <!-- Checkout -->
+      <div class="popup" style="font-size: 64px;" onclick="myFunction()">Checkout
+        <span class="popuptext" id="myPopup">
+    
+       <div class="CartContainer" >
+            <div class="cart-header">
+              <h3 class="cart-heading">Shopping Cart</h3>
+              <h5 class="Action">Remove all</h5>
+            </div>
+    
+            <div class="Cart-Items">
+                <div class="image-box">
+                  <img src="img/Grey-tshirt.png" style={{ height="120px" }} />
+                </div>
+                <div class="about">
+                  <h1 class="title">Grey/T-shirt</h1>
+                  <h3 class="subtitle">Medium</h3>
+                  <img src="img/Grey-tshirt.png" style={{ height="30px" }}/>
+                </div>
+                <div class="counter">
+                  <div class="btn">+</div>
+                  <div class="count">2</div>
+                  <div class="btn">-</div>
+                </div>
+                <div class="prices">
+                  <div class="amount">$2.99</div>
+                  <div class="save"><u>Save for later</u></div>
+                  <div class="remove"><u>Remove</u></div>
+                </div>
+            </div>
+    
+            <div class="Cart-Items pad">
+                <div class="image-box">
+                  <img src="img/blue-tshirt.png" style={{ height="120px" }} />
+                </div>
+                <div class="about">
+                  <h1 class="title">Blue/T-shirt</h1>
+                  <h3 class="subtitle">Large</h3>
+                  <img src="img/blue-tshirt.png" style={{ height="30px" }}/>
+                </div>
+                <div class="counter">
+                  <div class="btn">+</div>
+                  <div class="count">1</div>
+                  <div class="btn">-</div>
+                </div>
+                <div class="prices">
+                  <div class="amount">$3.19</div>
+                  <div class="save"><u>Save for later</u></div>
+                  <div class="remove"><u>Remove</u></div>
+                </div>
+            </div>
+          <hr> 
+          <div class="checkout">
+          <div class="total">
+            <div>
+              <div class="Subtotal">Sub-Total</div>
+              <div class="items">2 items</div>
+            </div>
+            <div class="total-amount">$6.18</div>
+          </div>
+          <button class="button">Checkout</button></div>
+       </div>
+    
+    
+    
+    </span>
+    </div>
+
+
+      <img src="img/Icon-Placeholder.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    </a>
+
+  </div>
 </nav>
 <!-- NavBar END -->
 
 
-    <div class="Header jumbotron-fluid bg-primary rounded text-center p-5">
+    <div class="Header jumbotron-fluid bg-primary text-center pb-4">
         <h1 style="font-family: Orbitron;">T-Shirt Shop</h1>
     </div>
 
     <div class="container d-flex justify-content-between" id="shirtsection">
         <div class="row">
-            <div class="col-3 bg-white">
+            <div class="col-3 bg-white" style="border-style: solid; border-width: 1px;">
                 <div id="altImages" class="row">
                   <div class="col-7 auto colorshirtcont">
                     <img id="greyshirt" src="img/grey-tshirt.png" onclick="changeShirt('grey')" class="colorshirt" alt="">
@@ -51,7 +133,7 @@
             <div class="col-3 shirt">
                 <div class="tshirtcontainer">
                     <img id="shirtimg" src="img/white-copy-8.png" class=" shirt" alt="t-shirt img">
-                    <div class="tshirtcentered" id="tShirt">Centered</div>
+                    <div class="tshirtcentered" id="tShirt" style="font-size: 25px;">Centered</div>
                 </div>
             </div>
             <div class="col-1"></div>
@@ -138,10 +220,51 @@
 
 
 <!-- Footer -->
+<footer class="bg-light text-center text-lg-start" id="footer">
+  <!-- Grid container -->
+  <div class="container pb-0">
+    <form action="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-auto mb-4 mb-md-0">
+          <p class="pt-2">
+            <strong>Sign up for our newsletter</strong>
+          </p>
+        </div>
+        <!--Grid column-->
 
-                <div class="footer">
-          <p>Footer align</p>
-      </div>        
+        <!--Grid column-->
+        <div class="col-md-5 col-12 mb-4 mb-md-0">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form5Example25" class="form-control" />
+            <label class="form-label" for="form5Example25">Email address</label>
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-auto mb-4 mb-md-0">
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary mb-4">
+            Subscribe
+          </button>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </form>
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(255, 255, 255);">
+    © 2022 Copyright:
+    <a class="text-dark" href="https://WADSquad">WADSquad.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 <!-- Footer END -->
 </body>
 </html>

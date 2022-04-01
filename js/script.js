@@ -1,5 +1,4 @@
 // Change text on tShirt
-//document.getElementById("tShirtInput").addEventListener("change", tShirtChange());
 
 function tShirtChange(){
     console.log("function called");
@@ -16,6 +15,7 @@ function tShirtChange(){
     console.log(tShirtText);    
 }
 
+// Change shirt color
 function changeShirt(color){
 
     if (color === "grey"){
@@ -41,31 +41,30 @@ function changeShirt(color){
     }
 }
 
+//Max character input
 function maxChar(tInput){
 if (tInput.value.length > tInput.maxLength) 
 tInput.value = tInput.value.slice(0, tInput.maxLength);
 }
 
+// Change font style
 let changeFontStyle = function (font) {
   document.getElementById("tShirt").style.fontFamily
               = font.value;
 }
 
-
-// var slider = document.getElementById("myRange");
-// var output = document.getElementById("demo");
-
-
-
 // Change Font Size
 function fontChange() {
-  console.log("function called");
 let range = document.getElementById('myRange');
-console.log(range.value);
 let content = document.getElementById('tShirt');
-// range.addEventListener('myRange', function(){
 const rangevalue = range.value;
-content.style.fontsize = rangevalue + "px";
-console.log(content);
-// })
+content.style.fontSize = rangevalue + "px";
+}
+
+
+
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
