@@ -41,6 +41,15 @@ function changeShirt(color){
     }
 }
 
+//checkout test
+function mouseOver() {
+  document.getElementById("coTest2").classList.toggle("show-co");
+}
+
+function mouseOut() {
+  // document.getElementById("coTest").classList.toggle("show-co");
+}
+
 //Max character input
 function maxChar(tInput){
 if (tInput.value.length > tInput.maxLength) 
@@ -67,4 +76,5 @@ content.style.fontSize = rangevalue + "px";
 function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
+  popup.classList.toggle("popup-hide");
 }

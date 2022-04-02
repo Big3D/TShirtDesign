@@ -6,6 +6,10 @@
     background-color: white;
     border: black;
 }
+
+h1{
+	margin: 0px 0px 0px;
+}
 .shirt{
     height: 600px;
     width: auto;
@@ -21,32 +25,25 @@
       margin-bottom: 25px;  
 }
 
-/* Shopping Cart */
-  
-
-/* th: 600px;
-    position: fixed;
-      left:0;
-    display: flex;
-    justify-items: center;    
-    bottom:0;
-    height: 50px;
-    width:25%; 
-    kground-co: rgb(158, 206, 245);
-    margin-top: 25px;
-    border-radius: 15px;
+.show-co {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	background-color: gray;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border: black;
+	/* overflow: auto; */
+	height: 250px;
+	width: 200px;
+}
+.popup-cont{
+	position: relative;
+}
+.navbar{
+	position: relative;
 }
 
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid rgb(148, 148, 148);
-  }
-   */
-  /* tr:hover {background-color: rgb(182, 185, 189);}
-} */
-/* Shopping Cart END */
 
 
 /* Footer */
@@ -90,9 +87,11 @@
       width: 200px; 
   }
 
-.altImages{
+#altImages{
     width: auto;
     height: auto;
+	padding-left: 50px;
+	padding-top: 15px;
     background-color: white;
 }
 .tshirtcontainer{
@@ -124,11 +123,12 @@
 }
 
 .CartContainer{
-	width: auto;
-	height: 40vh;
+	width: 800px;
+	height: 860px;
 	background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0px 10px 20px #1687d933;
+	
 }
 
 .cart-header{
@@ -247,7 +247,7 @@
 	margin-top: 5px;
 }
 
-hr{
+hr .popup{
 	width: 66%;
 	float: right;
 	margin-right: 5%;
@@ -298,8 +298,8 @@ hr{
 
 
 
-/* POP UP */
-/* Popup container - can be anything you want */
+/* /* POP UP */
+/* Popup container - actual shopping cart */
 .popup {
 	position: relative;
 	display: inline-block;
@@ -310,9 +310,12 @@ hr{
 	user-select: none;
   }
   
+  .popup-hide{
+	  display: block;
+  }
   /* The actual popup */
   .popup .popuptext {
-	visibility: hidden;
+	
 	width: 2560px;
 	background-color: #555;
 	color: #fff;
@@ -337,13 +340,16 @@ hr{
 	border-width: 5px;
 	border-style: solid;
 	border-color: #555 transparent transparent transparent;
+	
   }
   
   /* Toggle this class - hide and show the popup */
   .popup .show {
+	  position: absolute;
 	visibility: visible;
 	-webkit-animation: fadeIn 1s;
 	animation: fadeIn 1s;
+	
   }
   
   /* Add animation (fade in the popup) */
@@ -356,5 +362,12 @@ hr{
 	from {opacity: 0;}
 	to {opacity:1 ;}
   }
+
+
+
+
+
+
+  
 
   /* CART POP-UP END */
