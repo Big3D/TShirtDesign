@@ -46,6 +46,66 @@ function mouseOver() {
   document.getElementById("coTest2").classList.toggle("show-co");
 }
 
+function updatePrice(){
+  console.log("Update Ran");
+  let cartItems = Number(document.getElementById("cartItems").innerText);
+  let subtotal = document.getElementById("subTotal");
+  let grandtotal = document.getElementById("grandTotal");
+  let maxlength = 5;
+
+  if (cartItems <= 0){
+    cartItems === 0;
+    subtotal.innerText === "0";
+  }
+  else{
+  subTotal.innerText = cartItems * 5.99;
+  if (subtotal.innerText.length > maxlength){
+    subtotal.innerText = subtotal.innerText.slice(0, maxlength);
+  }
+  }
+
+  grandtotal.innerText = subtotal.innerText * 1.0875;
+
+  if (grandtotal.innerText.length > maxlength){
+    grandtotal.innerText = grandtotal.innerText.slice(0, maxlength);
+  }
+}
+
+function AddToCart(){
+  let cartAdd = Number(document.getElementById("cartItems").innerText);
+  document.getElementById("cartItems").innerText = Number(cartAdd) + 1;
+  
+  let shirtPreview = document.getElementById("shirtimg");
+  let textPreview = document.getElementById("tShirt");
+
+  let item1 = document.getElementById("item1")
+  let item1Text = document.getElementById("item1Text");
+  let item1Shirt = document.getElementById("item1Shirt");
+    
+  item1.classList.add("showCartItem")
+  item1.classList.remove("cartHide")
+  item1Text.innerText = textPreview.innerText;
+  item1Shirt.src = shirtPreview.src;
+
+  updatePrice();
+}
+
+function RemoveFromCart(){
+  let cartAdd = document.getElementById("cartItems").innerText;
+  if(cartAdd <= 0){
+    cartAdd === 0;
+  }
+  else{
+  document.getElementById("cartItems").innerText = Number(cartAdd) - 1;
+  }  
+
+  item1.classList.remove("showCartItem")
+  item1.classList.add("cartHide")
+
+  updatePrice();
+}
+
+
 function mouseOut() {
   // document.getElementById("coTest").classList.toggle("show-co");
 }

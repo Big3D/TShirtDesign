@@ -68,7 +68,7 @@
             <div class="col-3 shirt">
                 <div class="tshirtcontainer">
                     <img id="shirtimg" src="img/white-copy-8.png" class=" shirt" alt="t-shirt img">
-                    <div class="tshirtcentered" id="tShirt" style="font-size: 25px;">Centered</div>
+                    <div class="tshirtcentered" id="tShirt" style="font-size: 25px;">Put Text Here</div>
                 </div>
             </div>
             <div class="col-1"></div>
@@ -109,8 +109,8 @@
                 <button
 
 
-                 type="submit" class="btn btn-primary" style="width: 175px;">Add To Cart</button>
-                <button type="submit" class="btn btn-danger" style="margin: 20px;">Remove From Cart</button>
+                 type="submit" class="btn btn-primary" style="width: 175px;" onclick="AddToCart()">Add To Cart</button>
+                <button type="submit" class="btn btn-danger" style="margin: 20px;" onclick="RemoveFromCart()">Remove From Cart</button>
                 </form>
             
             </div>
@@ -123,12 +123,15 @@
 
       <!-- Checkout Button -->
 
-      <button type="button" class="btn btn-outline-primary" >Checkout</button>
+      <!-- <button type="button" class="btn btn-outline-primary" >Checkout</button> -->
 
       <!--  -->
 
     <div class="popup-cont">
-      <div class="popup" style="font-size: 64(X)" onclick="myFunction()">Checkout
+      <button type="button" class="btn btn-outline-primary" onclick="myFunction()" >Checkout</button>
+      <div class="popup" style="font-size: 64(X)" ><span>items: <span id="cartItems">0</span></span>
+        <br>
+        subtotal: <span id="subTotal">0</span>
         <span class="popuptext popup-hide" id="myPopup">(X)
       
           <div class="CartContainer" >
@@ -137,43 +140,27 @@
               <h5 class="Action">Remove all</h5>
             </div>
       
-            <div class="Cart-Items">
-                <div class="image-box">
-                  <img src="img/Grey-tshirt.png" style={{ height="120px" }} />
-                </div>
+            <div class="Cart-Items cartHide" id="item1">
                 <div class="about">
-                  <h1 class="title">Grey/T-shirt</h1>
-                  <h3 class="subtitle">Medium</h3>
-                  <img src="img/Grey-tshirt.png" style={{ height="30px" }}/>
-                </div>
-                <div class="counter">
-                  <div class="btn">+</div>
-                  <div class="count">2</div>
-                  <div class="btn">-</div>
+                  <h1 class="title" id="item1Text">Grey/T-shirt</h1>
+                  <br>
+                  <img src="img/Grey-tshirt.png" style={{ height="30px" }} id="item1Shirt"/>
                 </div>
                 <div class="prices">
-                  <div class="amount">$2.99</div>
+                  <div class="amount coAmount">$5.99</div>
                   <div class="save"><u>Save for later</u></div>
                   <div class="remove"><u>Remove</u></div>
                 </div>
             </div>
       
-            <div class="Cart-Items pad">
-              <div class="image-box">
-                <img src="img/blue-tshirt.png" style={{ height="120px" }} />
-              </div>
+            <div class="Cart-Items cartHide pad" id="item2">
               <div class="about">
-                <h1 class="title">Blue/T-shirt</h1>
-                <h3 class="subtitle">Large</h3>
-                <img src="img/blue-tshirt.png" style={{ height="30px" }}/>
-              </div>
-              <div class="counter">
-                <div class="btn">+</div>
-                <div class="count">1</div>
-                <div class="btn">-</div>
+                <h1 class="title" id="item2Text">Blue/T-shirt</h1>
+                <br>
+                <img src="img/blue-tshirt.png" style={{ height="30px" }} id="item2Shirt"/>
               </div>
               <div class="prices">
-                <div class="amount">$3.19</div>
+                <div class="amount">$5.99</div>
                 <div class="save"><u>Save for later</u></div>
                 <div class="remove"><u>Remove</u></div>
               </div>
@@ -182,10 +169,9 @@
             <div class="checkout">
               <div class="total">
                 <div>
-                  <div class="Subtotal">Sub-Total</div>
-                  <div class="items">2 items</div>
+                  <div class="Subtotal">Grand Total</div>
                 </div>
-              <div class="total-amount">$6.18</div>
+              <div class="total-amount">$<span id="grandTotal"></span></div>
             </div>
             <button class="button">Checkout</button>
           </div>
